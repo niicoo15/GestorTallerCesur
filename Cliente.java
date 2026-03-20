@@ -1,4 +1,4 @@
-package Taller;
+package GestorTallerCesur;
 
 public class Cliente {
 	private String nombre;

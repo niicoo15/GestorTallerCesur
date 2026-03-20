@@ -1,4 +1,4 @@
-package Taller;
+package GestorTallerCesur;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class Main {
@@ -27,7 +27,7 @@ public class Main {
 				System.out.println("Cancelar cita: ");
 				System.out.println("Modificar cita: ");		
 				
-				switch 
+				
 			}
 			
 			case 2 -> {
