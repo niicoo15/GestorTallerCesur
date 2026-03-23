@@ -1,6 +1,5 @@
 package GestorTallerCesur;
 import java.util.Scanner;
-import java.util.ArrayList;
 public class Main {
 	
 	public int leerNumero(int numero) {
@@ -26,39 +25,49 @@ public class Main {
 		
 			case 1 -> {
 				//System.out.println("Listar citas de hoy");
-				System.out.println("Ver futuras citas");
-				System.out.println("Agendar cita: ");
-				System.out.println("Cancelar cita: ");
-				System.out.println("Modificar cita: ");		
+				System.out.println("1. Ver futuras citas");
+				System.out.println("2. Agendar cita: ");
+				System.out.println("3. Cancelar cita: ");
+				System.out.println("4. Modificar cita: ");		
+				String opcion2 = sc.nextLine();
 				
-				
+				switch(opcion2) {}
 			}
 			
 			case 2 -> {
-				System.out.println("Modificar empleado");
-				System.out.println("Contratar empleado: ");
-				System.out.println("Ver horario de un empleado");				
+				System.out.println("1. Modificar empleado");
+				System.out.println("2. Contratar empleado: ");
+				System.out.println("3. Ver horario de un empleado");				
+				String opcion3 = sc.nextLine();
 				
+				switch(opcion3) {}
 			}
 			case 3 -> {
 				//System.out.println("");
-				System.out.println("Buscar: "); //Opcion de modificar despues.
-				System.out.println("Añadir cliente: ");
+				System.out.println("1. Buscar: "); //Opcion de modificar despues.
+				System.out.println("2. Añadir cliente: ");
+				String opcion4 = sc.nextLine();
 				
+				switch(opcion4) {}
 			}
 			case 4 -> {
 				//System.out.println("");
-				System.out.println("Buscar: "); 
-				System.out.println("Añadir Vehiculo: ");
+				System.out.println("1. Buscar: "); 
+				System.out.println("2. Añadir Vehiculo: ");
+				String opcion5 = sc.nextLine();
 				
+				switch(opcion5) {}
 			}
 			case 5 -> {
 				//System.out.println("");
-				System.out.println("Buscar por Cliente :");
-				System.out.println("Buscar por ID factura: ");
-				System.out.println("Buscar por matricula: ");
-				System.out.println("Buscar por empleado:  ");
-				System.out.println("Buscar por partes:  ");
+				System.out.println("1. Buscar por Cliente :");
+				System.out.println("2. Buscar por ID factura: ");
+				System.out.println("3. Buscar por matricula: ");
+				System.out.println("4. Buscar por empleado:  ");
+				System.out.println("5. Buscar por partes:  ");
+				String opcion6 = sc.nextLine();
+				
+				switch(opcion6) {}
 			}
 			
 			
