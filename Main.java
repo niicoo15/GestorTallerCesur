@@ -1,9 +1,8 @@
 package GestorTallerCesur;
 import java.util.Scanner;
-import java.util.ArrayList;
 public class Main {
 	
-	
+	//pueba
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// prueba
