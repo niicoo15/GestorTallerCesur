@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Factura {
 	
 	private int id;
-
 	private Cita cita;
 	private Cliente cliente;
 	private ArrayList<Factura> listafacturas;
@@ -38,6 +37,6 @@ public class Factura {
 		public String toString() {
 			return "Factura [id=" + id + ", listaElementos=" + listaElementos + "]";
 		}
-//>>>>>>> da808d953aa5b6d15e944026cf25c9b8ca28889e
+
 	
 }
