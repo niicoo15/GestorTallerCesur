@@ -1,4 +1,5 @@
 package GestorTallerCesur;
+import java.util.List;
 
 public class Empleado {
 	private String nombre;
@@ -6,7 +7,7 @@ public class Empleado {
 	private double sueldo;
 	private String turno;
 	private boolean estaDisponible;
-	
+	private List<String> puestos = List.of("Mecánico", "Dirección", "Oficina"); // Los puestos que tenemos. Usaremos la lista de solo lectura para asegurarnos que asignamos puestos válidos a los empleados
 	
 	public Empleado(String nombre, String puesto, double sueldo, String turno) {
 		setNombre(nombre);
@@ -29,6 +30,9 @@ public class Empleado {
 	}
 
 	public void setPuesto(String puesto) {
+		if (!puestos.contains(puesto)) {
+			throw new IllegalArgumentException("El puesto '" + puesto + "' no es un puesto válido");
+		}
 		this.puesto = puesto;
 	}
 	
