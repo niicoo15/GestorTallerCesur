@@ -20,17 +20,32 @@ public class Taller {
 		listaCoches.add(coche);		
 	}
 	//añadir empleados
-	public void addEmpleado(String nombre, String puesto, double sueldo, String turno) {
+	public void addEmpleado(String dni, String nombre, String puesto, double sueldo, String turno) {
 		/*
 			Este try-catch prueba a añadir un empleado. En caso de un dato incorrecto, desde la clase Empleado se lanza el error
 		*/
 		try {
-			Empleado empleado = new Empleado(nombre, puesto, sueldo, turno);
+			Empleado empleado = new Empleado(dni, nombre, puesto, sueldo, turno);
 			listaEmpleados.add(empleado);
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
 	}
+
+	//buscar empleado
+	public Empleado buscarEmpleadoDni(String dni) {
+		if (listaEmpleados.isEmpty()) {
+			System.out.println("No hay empleados contratados actualmente");
+		}
+		for (int i = 0; i < listaEmpleados.size(); i++) {
+			if (listaEmpleados.get(i).getDni().equals(dni)) {
+				return listaEmpleados.get(i);
+			}
+		}
+		System.out.println("No se ha encontrado el empleado");
+		return null;
+	}
+
 	//añadir facturas
 	public void addFactura(int id, ArrayList<Item> listaElementos) {
 		Factura factura = new Factura(id, listaElementos);
