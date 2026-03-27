@@ -2,10 +2,14 @@ package GestorTallerCesur;
 import java.util.Scanner;
 public class Main {
 	
-	//pueba
+	public int leerNumero(int numero) {
+		Scanner sc = new Scanner(System.in);
+		
+		return 5;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// prueba carlos
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Selecciona una opcion:");
 		//System.out.println("Create, Read, Update, Delete");
@@ -71,3 +75,6 @@ public class Main {
 
 	}
 }
+
+
+	
