@@ -12,7 +12,11 @@ public class Servicio extends Item {
 		this.empleado = empleado;
 		this.tiempoArreglo = tiempoArreglo;
 	}
-
+	@Override
+	public double precioServicio() {
+		double total = getPrecioBase() * this.tiempoArreglo;
+		return total;
+	}
 	public String getServicio() {
 		return servicio;
 	}
