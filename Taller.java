@@ -10,13 +10,13 @@ public class Taller {
 	ArrayList<Cliente> listaClientes = new ArrayList<>();
 
 		//añadir coches
-	public void addCoche(String matricula, String modelo, String descripcionFallo) {
+	public void addCoche(Cliente cliente, String matricula, String modelo, String descripcionFallo) {
 		for (Coche c : listaCoches) {
 			if (matricula.equals(c.getMatricula())) {
 				throw new IllegalArgumentException("Esta matricula ya esta añadida, añade otra");				
 			}
 		}
-		Coche coche = new Coche(matricula,modelo,descripcionFallo);			
+		Coche coche = new Coche(cliente,matricula,modelo,descripcionFallo);			
 		listaCoches.add(coche);		
 	}
 	//añadir empleados
@@ -86,5 +86,35 @@ public class Taller {
 		listaClientes.add(cliente);
 	}
 	
+	public void verCoches(){
+		for (Coche c : listaCoches){
+			System.out.println(c);
+		}
+	}
+
+	public void verEmpleados(){
+		for (Empleado e : listaEmpleados){
+			System.out.println(e);
+		}
+	}
+
+	public void verFacturas(){
+		for (Factura f : listaFacturas){
+			System.out.println(f);
+		}
+	}
+
+	public void verCitas(){
+		for (Cita c : listaCitas){
+			System.out.println(c);
+		}
+	}
+
+	public void verClientes(){
+		for (Cliente c : listaClientes){
+			System.out.println(c);
+		}
+	}
+
 	
 }

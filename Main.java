@@ -29,7 +29,7 @@ public class Main {
 				System.out.println("2. Agendar cita: ");
 				System.out.println("3. Cancelar cita: ");
 				System.out.println("4. Modificar cita: ");		
-				String opcion2 = sc.nextLine();
+				int opcion2 = sc.nextInt();
 				
 				switch(opcion2) {}
 			}
@@ -38,25 +38,25 @@ public class Main {
 				System.out.println("1. Modificar empleado");
 				System.out.println("2. Contratar empleado: ");
 				System.out.println("3. Ver horario de un empleado");				
-				String opcion3 = sc.nextLine();
+				int opcion2 = sc.nextInt();
 				
-				switch(opcion3) {}
+				switch(opcion2) {}
 			}
 			case 3 -> {
 				//System.out.println("");
 				System.out.println("1. Buscar: "); //Opcion de modificar despues.
 				System.out.println("2. Añadir cliente: ");
-				String opcion4 = sc.nextLine();
+				int opcion2 = sc.nextInt();
 				
-				switch(opcion4) {}
+				switch(opcion2) {}
 			}
 			case 4 -> {
 				//System.out.println("");
 				System.out.println("1. Buscar: "); 
 				System.out.println("2. Añadir Vehiculo: ");
-				String opcion5 = sc.nextLine();
+				int opcion2 = sc.nextInt();
 				
-				switch(opcion5) {}
+				switch(opcion2) {}
 			}
 			case 5 -> {
 				//System.out.println("");
@@ -65,9 +65,9 @@ public class Main {
 				System.out.println("3. Buscar por matricula: ");
 				System.out.println("4. Buscar por empleado:  ");
 				System.out.println("5. Buscar por partes:  ");
-				String opcion6 = sc.nextLine();
+				int opcion2 = sc.nextInt();
 				
-				switch(opcion6) {}
+				switch(opcion2) {}
 			}
 			
 			
