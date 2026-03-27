@@ -43,13 +43,14 @@ public class Taller {
 	}
 
 	//buscar empleado
-	public Empleado buscarEmpleadoDni(String dni) {
+	public Empleado buscarEmpleadoDni(String dniEmpleado) {
 		if (listaEmpleados.isEmpty()) {
 			System.out.println("No hay empleados contratados actualmente");
 		}
 		for (int i = 0; i < listaEmpleados.size(); i++) {
-			if (listaEmpleados.get(i).getDni().equals(dni)) {
-				return listaEmpleados.get(i);
+			if (listaEmpleados.get(i).getDni().equals(dniEmpleado)) {
+				Empleado empleado = listaEmpleados.get(i);
+				return empleado;
 			}
 		}
 		System.out.println("No se ha encontrado el empleado");
@@ -63,14 +64,14 @@ public class Taller {
 	}
 	
 	//añadir citas
-	public void addCita(String fecha, String hora, Cliente cliente, Coche coche, Factura factura, Empleado empleado) {
+	public void addCita(String fecha, String hora, Cliente cliente, Coche coche, Empleado empleado) {
 		/*
 			Este try-catch prueba a crear la nueva cita. En caso de un dato incorrecto, desde la clase Cita se lanza el error
 		*/
 		try {
-			Cita cita = new Cita(fecha, hora, cliente, coche, factura, empleado);
+			Cita cita = new Cita(fecha, hora, cliente, coche, empleado);
 			listaCitas.add(cita);
-			
+			System.out.println("Cita añadida cporrectamente");
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
@@ -96,7 +97,7 @@ public class Taller {
 				Factura factura = listaCitas.get(i).getFactura();
 				Empleado empleado = listaCitas.get(i).getEmpleado();
 				listaCitas.remove(i); //Elimino la cita
-				Cita cita = new Cita(fecha, hora, cliente, coche, factura, empleado); // creo una cita nueva con los datos guardados y con la nueva fecha y hora
+				Cita cita = new Cita(fecha, hora, cliente, coche, empleado); // creo una cita nueva con los datos guardados y con la nueva fecha y hora
 				listaCitas.add(cita); // añado la nueva cita a la lista
 				
 				return;

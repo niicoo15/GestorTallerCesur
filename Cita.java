@@ -9,12 +9,12 @@ public class Cita {
 	private Empleado empleado;
 
 
-	public Cita (String fecha, String hora, Cliente cliente, Coche coche, Factura factura, Empleado empleado) {
+	public Cita (String fecha, String hora, Cliente cliente, Coche coche, Empleado empleado) {
 		this.fecha = fecha;
 		this.hora = hora;
 		this.cliente = cliente;
 		this.coche = coche;
-		this.factura = factura;
+		//this.factura = factura;
 		this.empleado = empleado;
 	}
 

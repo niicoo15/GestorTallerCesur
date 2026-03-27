@@ -1,15 +1,15 @@
 package GestorTallerCesur;
 import java.util.Scanner;
 public class Main {
-	
 	public int leerNumero(int numero) {
 		Scanner sc = new Scanner(System.in);
 		
 		return 5;
 	}
 	
+	
 	public static void main(String[] args) {
-		
+		Taller taller = new Taller();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Selecciona una opcion:");
 		//System.out.println("Create, Read, Update, Delete");
@@ -31,7 +31,28 @@ public class Main {
 				System.out.println("4. Modificar cita: ");		
 				int opcion2 = sc.nextInt();
 				
-				switch(opcion2) {}
+				switch(opcion2) {
+					case 1 -> {
+						
+					}
+
+					case 2 -> {
+						System.out.println("Introduce la fecha (00/00/000)");
+						String fecha = sc.nextLine();
+						System.out.println("Introduce la hora:");
+						String hora = sc.nextLine();
+						System.out.println("DNI del cliente: ");
+						String dniCliente = sc.nextLine();
+						Cliente cliente = taller.buscarCliente(dniCliente); // Necesitamos el método buscarCliente, no existe
+						System.out.println("Matrícula del coche");
+						String matricula = sc.nextLine();
+						Coche coche = taller.buscarCoche(matricula); // Necesitamos el método buscarCoche
+						System.out.println("DNI del empleado que atenderá al cliente");
+						String dniEmpleado = sc.nextLine();
+						Empleado empleado = taller.buscarEmpleadoDni(dniEmpleado);
+						taller.addCita(fecha, hora, cliente, coche, empleado);
+					}
+				}
 			}
 			
 			case 2 -> {
