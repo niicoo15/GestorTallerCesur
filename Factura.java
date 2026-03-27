@@ -12,7 +12,6 @@ public class Factura {
 	private ArrayList<Item> listaElementos;
 	
 		public Factura(int id, ArrayList<Item> listaElementos) {
-			super();
 			this.id = id;
 			this.listaElementos = listaElementos;
 		}

@@ -9,7 +9,7 @@ public class Taller {
 	ArrayList<Cita> listaCitas = new ArrayList<>();
 	ArrayList<Cliente> listaClientes = new ArrayList<>();
 
-	//añadir coches
+		//añadir coches
 	public void addCoche(String matricula, String modelo, String descripcionFallo) {
 		for (Coche c : listaCoches) {
 			if (matricula.equals(c.getMatricula())) {
@@ -20,23 +20,38 @@ public class Taller {
 		listaCoches.add(coche);		
 	}
 	//añadir empleados
-	public void addEmpleado(String nombre, String puesto, double sueldo, String turno) {
+	public void addEmpleado(String dni, String nombre, String puesto, double sueldo, String turno) {
 		/*
 			Este try-catch prueba a añadir un empleado. En caso de un dato incorrecto, desde la clase Empleado se lanza el error
 		*/
 		try {
-			Empleado empleado = new Empleado(nombre, puesto, sueldo, turno);
+			Empleado empleado = new Empleado(dni, nombre, puesto, sueldo, turno);
 			listaEmpleados.add(empleado);
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
 	}
+
+	//buscar empleado
+	public Empleado buscarEmpleadoDni(String dni) {
+		if (listaEmpleados.isEmpty()) {
+			System.out.println("No hay empleados contratados actualmente");
+		}
+		for (int i = 0; i < listaEmpleados.size(); i++) {
+			if (listaEmpleados.get(i).getDni().equals(dni)) {
+				return listaEmpleados.get(i);
+			}
+		}
+		System.out.println("No se ha encontrado el empleado");
+		return null;
+	}
+
 	//añadir facturas
 	public void addFactura(int id, ArrayList<Item> listaElementos) {
 		Factura factura = new Factura(id, listaElementos);
 		listaFacturas.add(factura);
 	}
-	//añadir citas
+		//añadir citas
 	public void addCita(String fecha, String hora, Cliente cliente, Coche coche, Factura factura, Empleado empleado) {
 		/*
 			Este try-catch prueba a crear la nueva cita. En caso de un dato incorrecto, desde la clase Cita se lanza el error
@@ -49,7 +64,7 @@ public class Taller {
 			System.err.println(e.getMessage());
 		}
 	}
-	//añadir clientes
+		//añadir clientes
 	public void addCliente(String nombre, String apellido, String dni) {
 		for (Cliente c : listaClientes) {
 			if (dni.equals(c.getDni())) {
@@ -59,4 +74,6 @@ public class Taller {
 		Cliente cliente = new Cliente(nombre, apellido, dni);
 		listaClientes.add(cliente);
 	}
+	
+	
 }
