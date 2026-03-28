@@ -9,7 +9,7 @@ public class Taller {
 	ArrayList<Cita> listaCitas = new ArrayList<>();
 	ArrayList<Cliente> listaClientes = new ArrayList<>();
 
-		//añadir coches
+	//añadir coches
 	public void addCoche(Cliente cliente, String matricula, String modelo, String descripcionFallo) {
 		for (Coche c : listaCoches) {
 			if (matricula.equals(c.getMatricula())) {
@@ -19,6 +19,19 @@ public class Taller {
 		Coche coche = new Coche(cliente,matricula,modelo,descripcionFallo);			
 		listaCoches.add(coche);		
 	}
+
+	// Buscar coche
+	public Coche buscarCoche(String matricula) {
+		for (Coche coche : listaCoches) {
+			if (coche.getMatricula().equals(matricula)) {
+				System.out.println("Coche encontrado");
+				return coche;
+			}
+		}
+		System.out.println("No se ha encontrado ningún coche con la matrícula " + matricula);
+		return null;
+	}
+
 	//añadir empleados
 	public void addEmpleado(String dni, String nombre, String puesto, double sueldo, String turno) {
 		/*
@@ -115,6 +128,24 @@ public class Taller {
 		}
 		Cliente cliente = new Cliente(nombre, apellido, dni);
 		listaClientes.add(cliente);
+	}
+
+	// Buscar cliente
+	public Cliente buscarCliente(String dniCliente) {
+		for (Cliente cliente : listaClientes) {
+			if (cliente.getDni().equals(dniCliente)) {
+				System.out.println("Cliente encontrado");
+				return cliente;
+			}
+		}
+		System.out.println("No se ha encontrado ningún cliente con DNI " + dniCliente);
+		return null; 
+		/*
+		IMPORTANTE: 'return null' devuelve un NULL (el campo vacío).
+		Cuando usemos métodos de buscar (cliente, coche, empleado...) hay que asegurarse de que no es nulo.
+		Si no lo encuentra nos devuelve NULL y el programa sigue, se detendrá dando error cuando usemos el cliente = null que nos ha devuelto (No estoy seguro, pero creo que será así)
+		Solucion: cuando queramos obtener el cliente (o coche o lo que sea) que hemos buscado con el DNI hay que hacer algún if(cliente != null) para que el método no continue si no hay cliente
+		*/
 	}
 	
 	public void verCoches(){
