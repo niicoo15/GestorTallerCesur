@@ -26,6 +26,18 @@ public class Factura {
 			}
 			return total;
 		}
+		//genera una factura temporal en la terminal, mientras creo la persistencia para que la guarde en un archivo
+		public void generarFctura() {
+			double totalAcumulado = 0;
+			System.out.println("---factura taller---");
+			System.out.println("ID de la factura: "+ this.id);
+			for (Item r : listaElementos) {
+				double precioItem = r.calcularPrecioFinal();
+				System.out.println("- " + r.getNombre() + " precio: " + precioItem + " €");
+				totalAcumulado += precioItem;
+			}
+			System.out.println("total a pagar: " + totalAcumulado + " €");
+		}
 		public int getId() {
 			return id;
 		}
