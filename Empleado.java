@@ -52,7 +52,7 @@ public class Empleado {
 	
 	@Override
 	public String toString() {
-		return "DNI: " + this.dni + "Nombre: " + this.nombre + " Puesto: " + this.puesto;
+		return "DNI: " + this.dni + " Nombre: " + this.nombre + " Puesto: " + this.puesto + " Sueldo: " + this.sueldo + " Turno: " + this.turno;
 	}
 
 	
