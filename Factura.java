@@ -1,6 +1,8 @@
 package GestorTallerCesur;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 public class Factura {
@@ -28,10 +30,9 @@ public class Factura {
 			return total;
 		}
 
-		public void crearDirectorioFacturas (){
+		public String mesTraducido () {
 			LocalDate fecha = LocalDate.now();
 			String mesNombre = fecha.getMonth().toString().toUpperCase();
-
 			switch (mesNombre) {
 				case "JANUARY": mesNombre = "ENERO"; break;
 				case "FEBRUARY": mesNombre = "FEBRERO"; break;
@@ -47,24 +48,36 @@ public class Factura {
 				case "DECEMBER": mesNombre = "DICIEMBRE"; break;	
 				default: mesNombre = "Desconocido"; break;
 			}
-			File listaFacturas = new File ("facturas mes " + mesNombre);
-
-			if(listaFacturas.mkdir()) {
-				System.out.println("se creo directorio facturas del mes: " + mesNombre );
-			}
-
+			return mesNombre;
 		}
-		//genera una factura temporal en la terminal, mientras creo la persistencia para que la guarde en un archivo
-		public void generarFctura() {
+
+		public void crearDirectorioFacturas (){ //separe la traduccion de la creacion del directorio por si se necesitan en otras clases
+			File directorio = new File ("Facturas mes " + mesTraducido());
+
+			if(!directorio.exists()) {
+			if(directorio.mkdir()) {
+				System.out.println("Se creo directorio facturas del mes: " + mesTraducido() );
+			 }
+			}
+		}
+		
+		public void generarFactura() {
 			double totalAcumulado = 0;
-			System.out.println("---factura taller---");
-			System.out.println("ID de la factura: "+ this.id);
+			String nombreMes = mesTraducido();
+			String ruta = "Facturas mes " + nombreMes + "/factura " + this.id + ".csv";
+			try(FileWriter f = new FileWriter (ruta)) {
+				f.write("---factura taller---"+ "\n");
+				f.write("ID de la factura: "+ this.id+ "\n");
+				f.write("Fecha: " + this.fecha + "\n");
 			for (Item r : listaElementos) {
 				double precioItem = r.calcularPrecioFinal();
-				System.out.println("- " + r.getNombre() + " precio: " + precioItem + " €");
+				f.write(r.getNombre() + ";" + precioItem + " €\n");
 				totalAcumulado += precioItem;
 			}
-			System.out.println("total a pagar: " + totalAcumulado + " €");
+				f.write("total a pagar: " + totalAcumulado + " €\n");
+		}catch (IOException e) {
+			System.err.println("Error al guardar la factura" + e.getMessage());
+		}
 		}
 		public int getId() {
 			return id;
