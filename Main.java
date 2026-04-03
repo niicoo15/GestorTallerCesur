@@ -160,7 +160,65 @@ public class Main {
 					int opcion2 = sc.nextInt();
 					sc.nextLine();
 					
-					switch(opcion2) {}
+					switch(opcion2) {
+
+						case 1 -> {
+							System.out.println("Introduce el dni del cliente: ");
+							String dni = sc.nextLine();
+							sc.nextLine();
+							Cliente cliente = taller.buscarCliente(dni);
+							int decision = 0;
+							do {
+								System.out.println("¿Quieres modificar algo del cliente? ");
+								System.out.println("1. Si");
+								System.out.println("2. No");
+								decision = sc.nextInt();
+
+								switch(decision){
+
+									case 1 -> {
+										System.out.println("¿Qué deseas modificar?");
+										System.out.println("1. Nombre");
+										System.out.println("2. Apellido");
+										System.out.println("3. Dni");
+										int cambio = sc.nextInt();
+
+										switch(cambio) {
+
+											case 1 -> {
+												System.out.println("Escribe el nuevo nombre: ");
+												String nombre = sc.next();
+												cliente.setNombre(nombre);
+											}
+
+											case 2 -> {
+												System.out.println("Escribe el nuevo apeliido: ");
+												String apellido = sc.next();
+												cliente.setApellido(apellido);
+											}
+
+											case 3 -> {
+												System.out.println("Escribe el nuevo dni: ");
+												String dniCambio = sc.next();
+												cliente.setDni(dniCambio);
+											}
+										}
+									}
+								
+								}
+							} while(decision != 2);	
+						}
+
+						case 2 -> {
+							System.out.println("Introduce el nombre del cliente: ");
+							String nombre = sc.next();
+							System.out.println("Introduce el apellido del cliente: ");
+							String apellido = sc.next();
+							System.out.println("Introduce el dni del cliente: ");
+							String dni = sc.next();
+							taller.addCliente(nombre, apellido, dni);
+						}
+					}
 				}
 				case 4 -> {
 					//System.out.println("");
