@@ -38,6 +38,14 @@ public class Empleado {
 		}
 		this.sueldo = sueldo;
 	}
+
+	public void setPuesto(String puesto){
+		this.puesto = puesto;
+	}
+
+	public void setTurno(String turno){
+		this.turno = turno;
+	}
 	
 	public String getTurno() {
 		return turno;
@@ -52,7 +60,7 @@ public class Empleado {
 	
 	@Override
 	public String toString() {
-		return "DNI: " + this.dni + "Nombre: " + this.nombre + " Puesto: " + this.puesto;
+		return "DNI: " + this.dni + " Nombre: " + this.nombre + " Puesto: " + this.puesto + " Sueldo: " + this.sueldo + " Turno: " + this.turno;
 	}
 
 	

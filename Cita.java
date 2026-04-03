@@ -3,18 +3,18 @@ package GestorTallerCesur;
 public class Cita {
 	private String fecha;
 	private String hora;
-	private Cliente cliente; // cliente, coche, factura y empleado no necesitan getter ni setter en principio
+	private Cliente cliente;
 	private Coche coche;
 	private Factura factura;
 	private Empleado empleado;
 
 
-	public Cita (String fecha, String hora, Cliente cliente, Coche coche, Factura factura, Empleado empleado) {
+	public Cita (String fecha, String hora, Cliente cliente, Coche coche, Empleado empleado) {
 		this.fecha = fecha;
 		this.hora = hora;
 		this.cliente = cliente;
 		this.coche = coche;
-		this.factura = factura;
+		//this.factura = factura;
 		this.empleado = empleado;
 	}
 
@@ -24,7 +24,22 @@ public class Cita {
     public String getHora() {
         return hora;
     }
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	
+	public Coche getCoche() {
+		return coche;
+	}
 
+	public Factura getFactura() {
+		return factura;
+	}
+
+	public Empleado getEmpleado() {
+		return empleado;
+	}
 	@Override
 
 	public String toString() {
@@ -32,8 +47,8 @@ public class Cita {
 			"Hora " + hora + " " + "\n" +
 			cliente + "\n" +
 			coche + "\n" +
-			factura + "\n" +
 			empleado;
 	}
+
 
 }

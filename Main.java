@@ -1,13 +1,8 @@
 package GestorTallerCesur;
 import java.util.Scanner;
 public class Main {
-	public int leerNumero(int numero) {
-		Scanner sc = new Scanner(System.in);
-		
-		return 5;
-	}
 	
-
+	
 	public static void main(String[] args) {
 		Taller taller = new Taller();
 		Scanner sc = new Scanner(System.in);
@@ -38,7 +33,7 @@ public class Main {
 					
 					switch(opcion2) {
 						case 1 -> {
-							
+							taller.verCitas();
 						}
 	
 						case 2 -> {
@@ -128,15 +123,34 @@ public class Main {
 
 								switch(accion) {
 									case 1 -> { // No es definitiva esta forma de hacerlo
-										System.out.println("Introdice el sueldo:");
+										System.out.println("Introduce el sueldo:");
 										Double sueldo = sc.nextDouble();
 										sc.nextLine();
 										empleado.setSueldo(sueldo);
+									}
+
+									case 2 -> { 
+										System.out.println("Introduce el puesto:");
+										String puesto = sc.nextLine();
+										sc.nextLine();
+										empleado.setPuesto(puesto);
+									}
+
+									case 3 -> { 
+										System.out.println("Introduce el turno:");
+										String turno = sc.nextLine();
+										sc.nextLine();
+										empleado.setTurno(turno);
 									}
 								}
 							} while (accion != 4);
 						}
 
+						case 3 -> {
+							System.out.println("Introduce el dni del empleado del que quieras ver el turno");
+							String dni = sc.next();
+							System.out.println(taller.verTurno(dni));
+						}
 					}
 				}
 				case 3 -> {
