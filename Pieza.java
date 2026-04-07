@@ -14,9 +14,10 @@ public class Pieza extends Item {
 		this.beneficio = beneficio;
 	}
 
+	//calcula el precio de los repuestos mas el margen de beneficio
 	@Override
-	public double precioFinalPieza() {
-		double total = getPrecioBase() * beneficio;
+	public double calcularPrecioFinal() {
+		double total = getPrecioBase() * this.beneficio;
 		return total;
 	}
 	public String getNombrePieza() {

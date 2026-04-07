@@ -13,7 +13,7 @@ public class Servicio extends Item {
 		this.tiempoArreglo = tiempoArreglo;
 	}
 	@Override
-	public double precioServicio() {
+	public double calcularPrecioFinal() {
 		double total = getPrecioBase() * this.tiempoArreglo;
 		return total;
 	}

@@ -17,7 +17,10 @@ public class Cita {
 		this.factura = factura;
 		this.empleado = empleado;
 	}
-
+	//adicione este getter para porder buscar en la factura
+	public Coche getCoche() { 
+		return coche;
+	}
     public String getFecha() {
         return fecha;
     }
